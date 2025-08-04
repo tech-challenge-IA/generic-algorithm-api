@@ -1,0 +1,114 @@
+type: collection.insomnia.rest/5.0
+name: generic_api
+meta:
+  id: wrk_88b1839b9a0e448194448c1dd292657e
+  created: 1753881810762
+  modified: 1753881810762
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/optimizer/
+    name: post otimizar
+    meta:
+      id: req_31e22b878e30451ea9076ca772a850f3
+      created: 1753882743644
+      modified: 1754310037962
+      isPrivate: false
+      description: ""
+      sortKey: -1753882743645
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_2b2ada51a8064278ac41619b7d8bd659
+          name: melhorias_path
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: C:\Users\Vini\Downloads\melhorias.csv
+        - id: pair_3da6e4e4d1d54484a8e8f34204a90a68
+          name: orcamento
+          value: "50000"
+          description: ""
+          disabled: false
+        - id: pair_cee5f500c7454584b419203241c94d64
+          name: tamanho_populacao
+          value: "50"
+          description: ""
+          disabled: false
+        - id: pair_6c7e539c484a485d93c1c295367d5a1a
+          name: geracoes
+          value: "100"
+          description: ""
+          disabled: false
+        - id: pair_9f2b26689a3c44ab9a837440b08f948e
+          name: "gerar_grafico "
+          value: "true"
+          description: ""
+          disabled: false
+    parameters:
+      - id: pair_5236b9c4e9424d938cfec2eb7adee40e
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MzEwMDQxLCJpYXQiOjE3NTQzMDk3NDEsImp0aSI6ImU2Mjk4N2E1NzM1NTQ4NjNiODUxZjU0NDY2MzQzMjRmIiwidXNlcl9pZCI6IjEifQ.SS_GBq_jlfY-SLY27os6CeOWyKItnkfU7zEFyLQvEZE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/token/
+    name: autenticar
+    meta:
+      id: req_45793c6700ef40e7a88c42e230f58345
+      created: 1753882803530
+      modified: 1754308943104
+      isPrivate: false
+      description: ""
+      sortKey: -1753882803530
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "vini",
+          "password": "123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_575d8818f1558bd31506f2346b71c3e04fcacadf
+    created: 1753881810792
+    modified: 1753881810792
+environments:
+  name: Base Environment
+  meta:
+    id: env_575d8818f1558bd31506f2346b71c3e04fcacadf
+    created: 1753881810786
+    modified: 1753881810786
+    isPrivate: false
