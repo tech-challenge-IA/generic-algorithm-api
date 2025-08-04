@@ -74,7 +74,7 @@ collection:
     meta:
       id: req_45793c6700ef40e7a88c42e230f58345
       created: 1753882803530
-      modified: 1754308943104
+      modified: 1754318448830
       isPrivate: false
       description: ""
       sortKey: -1753882803530
@@ -83,8 +83,8 @@ collection:
       mimeType: application/json
       text: |
         {
-          "username": "vini",
-          "password": "123"
+          "username": "seu user",
+          "password": "sua senha"
         }
     headers:
       - name: Content-Type
