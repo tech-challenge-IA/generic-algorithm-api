@@ -36,7 +36,7 @@ Além disso, pode gerar um gráfico da evolução do fitness do algoritmo em PDF
 ### 1. Clone o repositório
 
 
-git clone https://seurepositorio.git
+git clone https://github.com/tech-challenge-IA/generic-algorithm-api
 cd generic-algorithm-api
 
 ## Windows:
