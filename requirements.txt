@@ -1,0 +1,4 @@
+Django>=5.2.4
+djangorestframework>=3.14
+matplotlib>=3.7.1
+numpy>=1.25.0

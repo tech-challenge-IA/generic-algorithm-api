@@ -3,6 +3,8 @@ import csv
 import random
 import numpy as np
 from datetime import datetime
+import matplotlib
+matplotlib.use('Agg')  
 import matplotlib.pyplot as plt
 
 TAXA_MUTACAO = 0.01
@@ -53,7 +55,6 @@ def crossover(pai1, pai2):
 def mutacao(individuo):
     return [1 - g if random.random() < TAXA_MUTACAO else g for g in individuo]
 
-
 def algoritmo_genetico(melhorias, orcamento, tamanho_populacao=50, num_geracoes=100):
     num_melhorias = len(melhorias)
     populacao = inicializar_populacao(tamanho_populacao, num_melhorias)
@@ -84,19 +85,6 @@ def algoritmo_genetico(melhorias, orcamento, tamanho_populacao=50, num_geracoes=
         print(f"Geração {geracao+1}: Melhor fitness = {melhor_fitness}")
 
     return melhor_individuo, melhor_fitness, evolucao_fitness
-
-
-def exibir_solucao(individuo, melhorias):
-    print("\nMelhor combinação de melhorias encontrada:")
-    custo_total = 0
-    valorizacao_total = 0
-    for gene, melhoria in zip(individuo, melhorias):
-        if gene:
-            print(f"- {melhoria['nome']} (Custo: {melhoria['custo']}, Valorização: {melhoria['valorizacao']})")
-            custo_total += melhoria['custo']
-            valorizacao_total += melhoria['valorizacao']
-    print(f"\nCusto total: {custo_total}")
-    print(f"Valorização total: {valorizacao_total}")
 
 def plotar_evolucao_fitness(evolucao_fitness, nome_projeto='Tech Challenge Fase 2'):
     os.makedirs('resultados', exist_ok=True)
@@ -155,6 +143,6 @@ def plotar_evolucao_fitness(evolucao_fitness, nome_projeto='Tech Challenge Fase 
                 fontsize=12, color='red', fontweight='bold')
 
     plt.tight_layout()
-    plt.savefig(f"{nome_arquivo_base}.png", dpi=180)
-    plt.savefig(f"{nome_arquivo_base}.pdf")
-    plt.show()
+    caminho_pdf = f"{nome_arquivo_base}.pdf"
+    plt.savefig(caminho_pdf)
+    return caminho_pdf
